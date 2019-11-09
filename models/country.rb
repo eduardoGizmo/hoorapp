@@ -3,17 +3,22 @@ require_relative('../db/sql_runner')
 
 class Country
 
+  attr_reader :id
+  attr_accessor :name, :continent, :visited, :total_rate
+
+
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @continent = options['continent']
-    @total_rate = options['total_rate'].to_i
+    @visited = options['visited'].to_i
+    @total_rate = options['total_rate'].to_f
   end
 
 #  SAVE A NEW COUNTRY
   def save()
-    sql = "INSERT INTO countries (name, continent, total_rate) VALUES ($1, $2, $3) returning id"
-    values = [@name, @continent, @total_rate]
+    sql = "INSERT INTO countries (name, continent, visited, total_rate) VALUES ($1, $2, $3, $4) RETURNING id"
+    values = [@name, @continent, @visited, @total_rate]
     result = SqlRunner.run(sql, values)
     id = result.first['id']
     @id = id
@@ -21,8 +26,8 @@ class Country
 
 # UPDATE COUNTRY
   def update()
-    sql = "UPDATE countries SET (name, continent, total_rate) = ($1, $2, $3) WHERE id = $4"
-    values = [@name, @continent, @total_rate, @id]
+    sql = "UPDATE countries SET (name, continent, visited, total_rate) = ($1, $2, $3, $4) WHERE id = $5"
+    values = [@name, @continent, @visited, @total_rate, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -32,6 +37,17 @@ class Country
     values = [@id]
     SqlRunner.run(sql, values)
   end
+
+
+# FIND CITIES BY COUNTRY
+  def cities()
+    sql = "SELECT cities.* FROM cities WHERE country_id = $1"
+    values = [@id]
+    cities = SqlRunner.run(sql, values)
+    result = City.map_items(cities)
+    return result
+  end
+
 
 # SHOW ALL COUNTRIES
   def self.all()

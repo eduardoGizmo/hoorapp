@@ -5,13 +5,14 @@ CREATE TABLE countries (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
   continent VARCHAR(255),
-  total_rate INT4
+  visited NUMERIC,
+  total_rate NUMERIC
 );
 
 CREATE TABLE cities (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
-  visited BOOLEAN,
+  visited NUMERIC,
   country_id INT8 REFERENCES countries(id),
-  rate INT4
+  rate NUMERIC
 );
