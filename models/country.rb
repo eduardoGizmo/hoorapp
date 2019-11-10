@@ -57,8 +57,9 @@ class Country
     return countries
   end
 
+
 # FIND COUNTRY BY ID
-  def self.find(id)
+  def self.find_by_id(id)
     sql = "SELECT * FROM countries WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values).first
@@ -66,11 +67,43 @@ class Country
     return country
   end
 
+
+# VISITED COUNTRIES
+  def self.visited_countries
+    sql = "SELECT * FROM countries WHERE visited = 1"
+    all_countries = SqlRunner.run(sql)
+    countries = map_items(all_countries)
+    return countries
+  end
+
+
+# NON VISITED COUNTRIES
+    def self.non_visited_countries
+      sql = "SELECT * FROM countries WHERE visited = 0"
+      all_countries = SqlRunner.run(sql)
+      countries = map_items(all_countries)
+      return countries
+    end
+
+    #
+    # # FIND COUNTRY BY CITY
+    #       def visited()
+    #
+    #         country = Country.find(@country_id)
+    #         return country
+    #       end
+    #
+
+
+
+
+
 # DELETE ALL COUNTRIES
   def self.delete_all()
     sql = "DELETE FROM countries"
     SqlRunner.run(sql)
   end
+
 
 # MAP ALL ITEMS
   def self.map_items(data)

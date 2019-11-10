@@ -47,9 +47,9 @@ class City
 # SHOW ALL CITIES
     def self.all()
       sql = "SELECT * FROM cities"
-      all_countries = SqlRunner.run(sql)
-      countries = map_items(all_countries)
-      return countries
+      all_cities = SqlRunner.run(sql)
+      cities = map_items(all_cities)
+      return cities
     end
 
 # FIND CITIE BY ID
@@ -57,9 +57,26 @@ class City
         sql = "SELECT * FROM cities WHERE id = $1"
         values = [id]
         result = SqlRunner.run(sql, values).first
-        country = Country.new(result)
-        return country
+        city = City.new(result)
+        return city
     end
+
+# FIND VISITED CITIES
+    def self.visited_cities()
+      sql = "SELECT * FROM cities WHERE visited = 1"
+      all_cities = SqlRunner.run(sql)
+      cities = map_items(all_cities)
+      return cities
+    end
+
+# FIND VISITED CITIES
+    def self.non_visited_cities()
+      sql = "SELECT * FROM cities WHERE visited = 0"
+      all_cities = SqlRunner.run(sql)
+      cities = map_items(all_cities)
+      return cities
+    end
+
 
 # MAP ALL ITEMS
     def self.map_items(data)

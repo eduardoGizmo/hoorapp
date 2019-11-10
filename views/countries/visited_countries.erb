@@ -1,0 +1,43 @@
+<section class="innerHead">
+   <div class="top_innerHead">
+      <img src="/img/icon_arrow.svg" class="arrowIcon">
+      <a href="/" class="breadcrumb">HOME </a>
+      <span> / VISITED COUNTRIES</span>
+   </div>
+   <div class="bottom_innerHead">
+      <h1>Visited Countries</h1>
+      <a href="/new_country" class="addButton"><img src="/img/icon_folder.svg">Add new Country</a>
+   </div>
+</section>
+<section class="toolSection">
+     <div class="totalCountries">Total visited: <span> <%= @countries.count  %> </span></div>
+   <div class="viewList"><img src="/img/icon_list.svg">View as List </div>
+
+   <a href="/countries/non_visited_countries"><div class="visitedLink"><img src="/img/icon_bar_non_visited.svg">View Non Visited</div></a>
+       <a href="/countries/index"> <div class="visitedLink"><img src="/img/icon_bar_all.svg">View All</div></a>
+</section>
+<section class="uniquePanel">
+   <div class="gridItems">
+      <% @countries.each do |country| %>
+      <a href="/countries/<%= country.id %>">
+         <div class="gridItem">
+            <div class="gridImage">
+               <img src="" alt="">
+            </div>
+            <img src="/img/icon_visited.svg" alt="Icon for non visited place" class="iconGrid">
+            <div class="gridContainer">
+               <div class="gridText">
+                  <h3 class="gridName"><%= country.name %></h3>
+                  <p class="gridContinent"><%= country.continent %></p>
+                  <span class="gridLink">View Cities</span>
+               </div>
+               <div class="gridReviews">
+                  <img src="/img/icon_star.svg" alt="">
+                  <p class="gridRate"><%= country.total_rate %></p>
+               </div>
+            </div>
+         </div>
+      </a>
+      <% end %>
+   </div>
+</section>

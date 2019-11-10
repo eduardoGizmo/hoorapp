@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <g id="Group_94" data-name="Group 94" transform="translate(-253 -451)">
+    <g id="VIEW" transform="translate(253 451)">
+      <g id="Group_19" data-name="Group 19" transform="translate(-449 -403)">
+        <circle id="Ellipse_5" data-name="Ellipse 5" cx="18" cy="18" r="18" transform="translate(449 403)" fill="#fff"/>
+        <circle id="Ellipse_4" data-name="Ellipse 4" cx="13" cy="13" r="13" transform="translate(454 408)" fill="#ffcf4e"/>
+      </g>
+      <path id="iconmonstr-eye-9" d="M10.26,9.472A2.052,2.052,0,1,1,8.208,7.42,2.055,2.055,0,0,1,10.26,9.472Zm6.156-.307s-2.908,5.779-8.2,5.779C3.307,14.944,0,9.165,0,9.165S3.041,4,8.219,4C13.481,4,16.417,9.165,16.417,9.165Zm-4.788.307a3.42,3.42,0,1,0-3.42,3.42A3.424,3.424,0,0,0,11.628,9.472Z" transform="translate(10 8.056)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

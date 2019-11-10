@@ -1,0 +1,44 @@
+<section class="innerHead">
+   <div class="top_innerHead">
+      <img src="/img/icon_arrow.svg" class="arrowIcon">
+      <a href="/" class="breadcrumb">HOME </a>
+   </div>
+   <div class="bottom_innerHead">
+        <h1>Welcome back Eduardo!</h1>
+      <a href="/countries/index" class="viewAllButton"><img src="/img/icon_eye.svg">View all your countries</a>
+   </div>
+</section>
+
+<section class="startPanel">
+  <a href="/countries/visited_countries" class="panel_link">
+    <div class="homeVisited">
+      <div class="graphicPanel leftPanel">
+      </div>
+        <div class="contentPanel">
+      <h2>Countries I have visited</h2>
+      <div class="bottom_info">
+        <p>Countries: <span><%= @total_vis_countries.count %></span> |
+          Cities: <span><%= @total_vis_cities.count   %></span></p>
+      </div>
+      </div>
+    </div>
+    </a>
+    <a href="/countries/non_visited_countries" class="panel_link">
+    <div class="homeNonVisited">
+      <div class="graphicPanel rightPanel">
+      </div>
+      <div class="contentPanel">
+        <h2>Countries I want to visit</h2>
+        <div class="bottom_info">
+          <p>Countries: <span><%= @total_non_countries.count %></span> | Cities: <span><%= @total_vis_cities.count %></span></p>
+        </div>
+      </div>
+    </div>
+    </a>
+    <a href="#" class="panel_link">
+    <div class="homeCreate">
+      <img src="/img/icon_folder.svg">
+      <h2>Create <br/>a New <br/>Country</h2>
+    </div>
+    </a>
+</section>

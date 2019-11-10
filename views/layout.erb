@@ -2,14 +2,33 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+
     <title></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,700&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <nav id="appNav">
+      <div class="navContainer">
+        <div class="logoNav">
+          <a href="/"><img src="/img/logo_nav.svg"></a>
+        </div>
+        <div class="menuNav">
+          <ul>
+            <li><a href="" target="_self">Visited</a></li>
+            <li><a href="" target="_self">I want to visit</a></li>
+            <li><a href="" target="_self">Create Entry</a></li>
+          </ul>
+        </div>
+      </div>
 
     </nav>
 
-    <%= yield %>
+<div class="main-container">
+   <%= yield %>
+</div>
+
     <footer id="appFooter">
 
     </footer>

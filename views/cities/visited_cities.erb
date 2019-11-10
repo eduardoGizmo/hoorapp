@@ -1,0 +1,47 @@
+<section class="innerHead">
+   <div class="top_innerHead">
+      <img src="/img/icon_arrow.svg" class="arrowIcon">
+      <a href="/" class="breadcrumb">HOME </a>
+      <span> / VISITED CITIES</span>
+   </div>
+   <div class="bottom_innerHead">
+      <h1>Visited Cities</h1>
+      <a href="#" class="addButton"><img src="/img/icon_folder.svg">Add new City</a>
+   </div>
+</section>
+<section class="toolSection">
+     <div class="totalCountries">Total: <span> <%= @cities.count  %> </span></div>
+   <div class="viewList"><img src="/img/icon_list.svg">View as List </div>
+  <a href="/cities/visited_cities"> <div class="visitedLink"><img src="/img/icon_bar_visited.svg">View Visited</div></a>
+      <a href="/cities/non_visited_cities"><div class="visitedLink"><img src="/img/icon_bar_non_visited.svg">View Non Visited</div></a>
+
+</section>
+<section class="uniquePanel">
+   <div class="gridItems">
+      <% @cities.each do |city| %>
+      <a href="/cities/<%= city.id %>">
+         <div class="gridItem">
+            <div class="gridImage">
+               <img src="" alt="">
+            </div>
+            <% if city.visited == 1 %>
+            <img src="/img/icon_visited.svg" alt="Icon for non visited place" class="iconGrid">
+            <% else %>
+              <img src="/img/icon_no_visited.svg" alt="Icon for non visited place" class="iconGrid">
+            <% end %>
+            <div class="gridContainer">
+               <div class="gridText">
+                  <h3 class="gridName"><%= city.name %></h3>
+                  <p class="gridContinent"><%= city.country_id %></p>
+                  <span class="gridLink">View City</span>
+               </div>
+               <div class="gridReviews">
+                  <img src="/img/icon_star.svg" alt="">
+                  <p class="gridRate"><%= city.rate %></p>
+               </div>
+            </div>
+         </div>
+      </a>
+      <% end %>
+   </div>
+</section>
