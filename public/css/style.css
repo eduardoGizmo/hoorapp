@@ -369,22 +369,38 @@ span.gridLink {
 
 /* ADD COUNTRY */
 
-.formContainer{
-  justify-content: flex-end;
-display: flex;
+
+.formContainer {
+    justify-content: flex-end;
+    display: flex;
+    width: 100%;
 }
 form.formRow {
-    width: 100%;
+    width: 50%;
 }
 .formRow label {
     font-weight: 500;
     color: var(--dark);
     display: block;
-    margin: 10px 0 5px;
+    margin: 10px 0 0 15px;
+    font-size: 0.9em;
 }
 .formRow {
     display: flex;
     flex-direction: column;
+    padding: 10px 0;
+}
+.formRow.border {
+    border-bottom: 1px solid gainsboro;
+}
+.formRow select {
+    height: 42px;
+    background: #fff;
+    box-shadow: 0 1px 5px gainsboro;
+    border: 1px solid gainsboro;
+    font-size: 0.8em;
+    color: var(--green);
+    margin: 8px 0;
 }
 .formRow input {
     height: 30px;
@@ -393,10 +409,12 @@ form.formRow {
     border: 1px solid gainsboro;
 }
 input[type=text] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    color: var(--green);
 }
 input[type="submit"] {
     width: 200px;
@@ -407,4 +425,13 @@ input[type="submit"] {
     color: #fff;
     font-size: 1em;
     font-weight: 600;
+}
+input[type="radio"] {
+    box-shadow: none;
+}
+.formRow.radio{
+    /* color: black; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }

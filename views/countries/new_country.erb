@@ -23,26 +23,26 @@
 
 <form class="formRow" action="/countries/new_country" method="post">
 
-<div class="formRow">
+<div class="formRow border">
   <label for="name">Enter country name:</label>
-  <input type="text" name="name" id="name"/>
+  <input type="text" name="name" id="name" value="i.e:United Kigndom"/>
 </div>
 
-<div class="formRow">
+<div class="formRow border">
   <label for="continent">Continent</label>
   <select name="continent">
     <option value="Africa">Africa</option>
     <option value="Asia">Asia</option>
     <option value="Australia-Pacific">Australia - Pacific</option>
     <option value="Caribe">Caribe</option>
-    <option value="Europa">Europa</option>
+    <option value="Europe">Europa</option>
     <option value="North America">North America</option>
     <option value="Middle East">Middle East</option>
     <option value="South America">South America</option>
   </select>
 </div>
 
-<div class="formRow">
+<div class="formRow radio">
   <label for="visited"></label>
   <input type="radio" name="visited" value="1" checked> Visited<br>
   <input type="radio" name="not_visited" value="0"> not Visited
