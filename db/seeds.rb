@@ -63,6 +63,14 @@ city5 = City.new(
   'name' => 'Athems', 'country_id' => country5.id, 'visited' => 0, 'total_rate' => 0)
 city6 = City.new(
   'name' => 'Lisbon', 'country_id' => country6.id, 'visited' => 1, 'total_rate' => 0)
+city7 = City.new(
+  'name' => 'Huesca', 'country_id' => country1.id, 'visited' => 0, 'total_rate' => 0)
+city8 = City.new(
+  'name' => 'Lisbon', 'country_id' => country1.id, 'visited' => 1, 'total_rate' => 0)
+city9 = City.new(
+  'name' => 'Lisbon', 'country_id' => country1.id, 'visited' => 0, 'total_rate' => 0)
+city10 = City.new(
+  'name' => 'Lisbon', 'country_id' => country1.id, 'visited' => 1, 'total_rate' => 0)
 
 
 city1.save()
@@ -71,10 +79,13 @@ city3.save()
 city4.save()
 city5.save()
 city6.save()
+city7.save()
+city8.save()
+city9.save()
+city10.save()
 
 
 
-
-
-binding.pry
-nil
+#
+# binding.pry
+# nil

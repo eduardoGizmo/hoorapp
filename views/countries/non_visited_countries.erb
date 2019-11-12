@@ -2,7 +2,7 @@
    <div class="top_innerHead">
       <img src="/img/icon_arrow.svg" class="arrowIcon">
       <a href="/" class="breadcrumb">HOME </a>
-      <span> / COUNTRIES I WANT TO VISIT</span>
+      <span> / COUNTRIES I WANT Go</span>
    </div>
    <div class="bottom_innerHead">
       <h1>Countries I Want to Visit</h1>
@@ -10,8 +10,8 @@
    </div>
 </section>
 <section class="toolSection">
-     <div class="totalCountries">Total non visited:<span> <%= @countries.count  %> </span></div>
-   <div class="viewList"><img src="/img/icon_list.svg">View as List </div>
+     <div class="totalCountries"><img src="/img/icon_no_visited.svg" alt=""><p>Total Countries:</p><span> <%= @countries.count  %> </span></div>
+   <!-- <div class="viewList"><img src="/img/icon_list.svg">View as List </div> -->
 
   <a href="/countries/visited_countries"> <div class="visitedLink"><img src="/img/icon_bar_visited.svg">View Visited</div></a>
     <a href="/countries/index"> <div class="visitedLink"><img src="/img/icon_bar_all.svg">View All</div></a>
@@ -33,7 +33,7 @@
                <div class="gridText">
                   <h3 class="gridName"><%= country.name %></h3>
                   <p class="gridContinent"><%= country.continent %></p>
-                  <span class="gridLink">View Cities</span>
+                  <!-- <span class="gridLink">View Cities</span> -->
                </div>
                <div class="gridReviews">
                   <img src="/img/icon_star.svg" alt="">

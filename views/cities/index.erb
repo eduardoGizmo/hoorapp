@@ -6,7 +6,7 @@
    </div>
    <div class="bottom_innerHead">
       <h1>All Your Cities</h1>
-      <a href="#" class="addButton"><img src="/img/icon_folder.svg">Add new City</a>
+      <a href="/new_city" class="addButton"><img src="/img/icon_folder.svg">Add new City</a>
    </div>
 </section>
 <section class="toolSection">
@@ -32,7 +32,7 @@
             <div class="gridContainer">
                <div class="gridText">
                   <h3 class="gridName"><%= city.name %></h3>
-                  <p class="gridContinent"><%= city.country_id %></p>
+                  <p class="gridContinent"><%= city.country.name %></p>
                   <span class="gridLink">View City</span>
                </div>
                <div class="gridReviews">

@@ -2,22 +2,55 @@
    <div class="top_innerHead">
       <img src="/img/icon_arrow.svg" class="arrowIcon">
       <a href="/" class="breadcrumb">HOME </a>
-      <span> / COUNTRIES I WANT TO VISIT</span>
+      <span> / <a href="/countries/index" class="breadcrumb">ALL COUNTRIES </a> / <%= @country.name.upcase  %> </span>
    </div>
    <div class="bottom_innerHead">
       <h1><%= @country.name %></h1>
-      <a href="#" class="addButton"><img src="/img/icon_folder.svg">Add new City</a>
+      <a href="/countries/<%= @country.id %>/edit" class="editButton"><img src="/img/icon_pencil.svg">Edit Country</a>
    </div>
 </section>
 <section class="toolSection">
-     <!-- <div class="totalCountries">Visited:<span>  </span></div>
-      <div class="totalCountries">Non visited:<span>  </span></div> -->
-   <!-- <div class="viewList"><img src="/img/icon_list.svg">View as List </div> -->
+  <div class="counterBox">
+    <div class="totalCountries"><img src="/img/icon_visited.svg"> Visited:<span> <%= @total_visited %>  </span></div>
+     <div class="totalCountries"><img src="/img/icon_no_visited.svg"> Non visited:<span> <%= @total_non_visited  %> </span></div>
+  </div>
 
-  <!-- <a href="/countries/visited_countries"> <div class="visitedLink"><img src="/img/icon_bar_visited.svg">View Visited</div></a>
-    <a href="/countries/index"> <div class="visitedLink"><img src="/img/icon_bar_all.svg">View All</div></a> -->
+      <div class="totalRate"><img src="/img/icon_star.svg" alt="">Total Rating:<span> <%= @country.total_rate %> </span></div>
+   <!-- <div class="viewList"><img src="/img/icon_list.svg">View as List </div> -->
+    <a href="/new_city/<%= @country.id  %>" class="addButton"><img src="/img/icon_folder.svg">Add new City</a>
+ <!-- <a href="/countries/visited_countries"> <div class="visitedLink"><img src="/img/icon_bar_visited.svg">View Visited</div></a> -->
+    <!-- <a href="/countries/index"> <div class="visitedLink"><img src="/img/icon_bar_all.svg">View All</div></a> -->
 </section>
 <section class="uniquePanel">
 
+  <h6>All the cities for <%= @country.name %>:</h6>
+
+<div class="gridItems">
+   <% @cities.each do |city| %>
+   <a href="/cities/<%= city.id %>">
+      <div class="gridItem">
+         <div class="gridImage">
+            <img src="" alt="">
+         </div>
+         <% if city.visited == 1 %>
+         <img src="/img/icon_visited.svg" alt="Icon for non visited place" class="iconGrid">
+         <% else %>
+           <img src="/img/icon_no_visited.svg" alt="Icon for non visited place" class="iconGrid">
+         <% end %>
+         <div class="gridContainer">
+            <div class="gridText">
+               <h3 class="gridName"><%= city.name %></h3>
+               <p class="gridContinent"><%= @country.name %></p>
+               <!-- <span class="gridLink">View City</span> -->
+            </div>
+            <div class="gridReviews">
+               <img src="/img/icon_star.svg" alt="">
+               <p class="gridRate"><%= city.rate %></p>
+            </div>
+         </div>
+      </div>
+   </a>
+   <% end %>
+</div>
 
 </section>

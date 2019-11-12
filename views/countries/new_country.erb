@@ -9,33 +9,28 @@
 
    </div>
 </section>
-<section class="toolSection">
-     <div class="totalCountries">Total non visited:<span> <%= @countries.count  %> </span></div>
-   <div class="viewList"><img src="/img/icon_list.svg">View as List </div>
 
-  <a href="/countries/visited_countries"> <div class="visitedLink"><img src="/img/icon_bar_visited.svg">View Visited</div></a>
-    <a href="/countries/index"> <div class="visitedLink"><img src="/img/icon_bar_all.svg">View All</div></a>
-</section>
 <section class="uniquePanel">
+
    <div class="gridItems">
 <div class="formContainer">
-
+<img src="/img/delete_illustration.png" alt="" class="deleteIllus">
 
 <form class="formRow" action="/countries/new_country" method="post">
-
 <div class="formRow border">
   <label for="name">Enter country name:</label>
-  <input type="text" name="name" id="name" value="i.e:United Kigndom"/>
+  <input type="text" name="name" id="name" placeholder="Country Name"/>
 </div>
 
 <div class="formRow border">
   <label for="continent">Continent</label>
   <select name="continent">
+    <option selected="selected">Select the Continent</option>
     <option value="Africa">Africa</option>
     <option value="Asia">Asia</option>
     <option value="Australia-Pacific">Australia - Pacific</option>
     <option value="Caribe">Caribe</option>
-    <option value="Europe">Europa</option>
+    <option value="Europe">Europe</option>
     <option value="North America">North America</option>
     <option value="Middle East">Middle East</option>
     <option value="South America">South America</option>
@@ -43,12 +38,14 @@
 </div>
 
 <div class="formRow radio">
-  <label for="visited"></label>
-  <input type="radio" name="visited" value="1" checked> Visited<br>
-  <input type="radio" name="not_visited" value="0"> not Visited
+  <label for="visited">Visited?</label>
+<div class="rowRadio">
+  <input type="radio" name="visited" value="1" checked> <span>Yes</span><br>
+    <input type="radio" name="visited" value="0"> <span>No</span>
+</div>
 </div>
 
-  <div class="formRow">
+  <div class="formRow sendPanel">
       <input type="submit" value="Add Country"/>
     </div>
 

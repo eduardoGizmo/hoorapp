@@ -1,0 +1,65 @@
+<section class="innerHead">
+   <div class="top_innerHead">
+      <img src="/img/icon_arrow.svg" class="arrowIcon">
+      <a href="/" class="breadcrumb">HOME </a>
+      <span> / EDIT COUNTRY</span>
+   </div>
+   <div class="bottom_innerHead">
+     <h1>Edit Country /<a class="linkPlace" href="/countries/<%= @country.id %>"><%= @country.name %></a> </h1>
+      <a href="/countries/<%= @country.id %>" class="backButton"><img src="/img/icon_back.svg">Back to <%= @country.name %></a>
+   </div>
+</section>
+
+<section class="uniquePanel">
+   <div class="gridItems">
+
+
+
+
+<div class="formContainer">
+<img src="/img/delete_illustration.png" alt="" class="deleteIllus">
+
+<form class="formRow" action="/countries/<%= @country.id %>" method="post">
+
+<div class="formRow border">
+  <label for="name">Enter country name:</label>
+  <input type="text" name="name" id="name" value="<%= @country.name %>"/>
+</div>
+
+<div class="formRow border">
+  <label for="continent">Continent</label>
+  <select name="continent">
+    <option value="Africa">Africa</option>
+    <option value="Asia">Asia</option>
+    <option value="Australia-Pacific">Australia - Pacific</option>
+    <option value="Caribe">Caribe</option>
+    <option value="Europe">Europa</option>
+    <option value="North America">North America</option>
+    <option value="Middle East">Middle East</option>
+    <option value="South America">South America</option>
+  </select>
+</div>
+
+<div class="formRow radio">
+  <label for="visited">Visited?</label>
+<div class="rowRadio">
+  <input type="radio" name="visited" value="1" checked> <span>Yes</span><br>
+    <input type="radio" name="visited" value="0"><span>No</span></div>
+</div>
+
+  <div class="formRow sendPanel">
+      <input type="submit" value="Save Changes"/>
+    </div>
+
+
+</form>
+</div>
+   </div>
+
+</section>
+
+<section class="deleteSection">
+  <a class="deleteButton" href="/countries/<%= @country.id  %>/delete"><img class="iconDelete" src="/img/icon_delete.svg">Delete Country</a>
+  <p class="alertDelete">Please think twice! once a country is deleted can not be retrieved,
+This action will also delete all the country cities!</p>
+</section>

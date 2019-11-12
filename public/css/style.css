@@ -24,13 +24,13 @@
     box-shadow: 0 0px 10px gainsboro;
 }
 .navContainer {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    margin: 0 auto;
-    height: 100%;
-    padding: 0 5%;
-    box-sizing: border-box;
+	width: 100%;
+	max-width: 1100px;
+	display: flex;
+	margin: 0 auto;
+	height: 100%;
+	padding: 0 5%;
+	box-sizing: border-box;
 }
 .logoNav {
     width: 25%;
@@ -56,7 +56,7 @@
 .menuNav a {
     display: inline-block;
     text-decoration: none;
-    color: var(--grey);
+    color: var(--dark);
 }
 
 /* FOOTER  */
@@ -65,6 +65,9 @@ footer#appFooter {
     background: var(--grey-2);
     width: 100%;
     height: 70px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 /* BODY  */
@@ -119,23 +122,51 @@ section.innerHead {
     color: var(--grey);
     margin-right: 5px;
 }
+.breadcrumb:hover {
+    color: var(--green);
+}
 img.arrowIcon {
     width: 28px;
     height: 24px;
     margin-right: 12px;
 }
 section.toolSection {
-    height: 60px;
-    border-bottom: 1px solid var(--grey-2);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10px;
+	height: 70px;
+	border-bottom: 1px solid var(--grey-2);
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 0 0 0 10px;
+}
+.uniquePanel h6 {
+	color: var(--dark);
+	font-size: 1.1rem;
+	margin: 10px;
+	padding-left: 19px;
+	font-weight: 500;
+}
+.counterBox {
+	display: flex;
+	border-left: 1px solid #c7c7c7;
+}
+section.toolSection.cityTool {
+	justify-content: space-between;
+	display: flex;
+	align-items: center;
 }
 .bottom_innerHead {
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
+	justify-content: space-between;
+	display: flex;
+	align-items: center;
+	padding: 0 0 0 10px;
+}
+a.linkPlace {
+	color: var(--dark);
+	padding-left: 10px;
+	transition: 0.3s ease-in-out;
+}
+a.linkPlace:hover {
+	color: var(--green);
 }
 a.viewAllButton {
     color: var(--grey);
@@ -149,38 +180,75 @@ a.viewAllButton {
     padding-right: 8px;
 }
 a.addButton {
-    background: var(--green);
-    color: #fff;
-    padding: 12px 50px;
-    border-radius: 33px;
-    text-decoration: none;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
+	background: var(--green);
+	color: #fff;
+	padding: 12px 50px;
+	border-radius: 33px;
+	text-decoration: none;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	margin-left: auto;
 }
 a.addButton img {
     width: 26px;
     padding-right: 15px;
 }
+a.editButton {
+	box-shadow: 0 2px 5px gainsboro;
+	border-radius: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 45px;
+	color: var(--green);
+	border: 1px solid var(--green);
+}
+a.editButton img {
+    padding-right: 12px;
+}
 .visitedLink {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 500;
-    color: var(--dark);
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+	color: var(--dark);
+	padding: 9px 26px;
+	box-shadow: 0 1px 7px gainsboro;
+	border-radius: 5px;
+	border: 1px solid #ebebeb;
+	margin: 0 20px;
 }
 .visitedLink img{
     padding-right: 10px;
     width: 30px;
 }
-.totalCountries {
-    padding: 0 20px;
-    border-left: 1px solid var(--grey-3);
-    border-right: 1px solid var(--grey-3);
+.totalCountries, .totalCities {
+	padding: 0 20px;
+	border-right: 1px solid var(--grey-3);
+	display: flex;
+	justify-content: center;
+	margin-right: auto;
+	align-items: center;
 }
-.totalCountries span {
-    font-weight: 600;
-    color: var(--dark);
+.totalCountries span, .totalCities span {
+	font-weight: 600;
+	color: var(--dark);
+	padding-left: 7px;
+	align-self: center;
+}
+.totalRate {
+	display: flex;
+	align-items: center;
+	padding: 0 30px;
+}
+.totalRate span {
+	color: var(--dark);
+	padding-left: 5px;
+	font-weight: 500;
+}
+.totalRate img {
+    width: 21px;
+    padding-right: 10px;
 }
 .viewList {
     display: flex;
@@ -202,13 +270,21 @@ section.startPanel {
     border-bottom: 1px solid var(--grey-3);
 }
 .homeVisited, .homeNonVisited {
-    width: 38%;
-    height: 350px;
-    border-radius: 40px;
-    box-shadow: 0 5px 5px gainsboro;
-    overflow: hidden;
+	width: 45%;
+	height: 350px;
+	border-radius: 40px;
+	box-shadow: 0 5px 5px gainsboro;
+	overflow: hidden;
+	transition: 0.3s ease-in-out;
+	border: 1px solid #f0f0f0;
 }
-
+.homeVisited:hover, .homeNonVisited:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 20px 16px gainsboro;
+}
+.homeVisited:hover .graphicPanel, .homeNonVisited:hover .graphicPanel {
+	background-color: #c8d9e8;
+}
 .homeCreate {
     width: 20%;
     background: var(--green);
@@ -218,38 +294,46 @@ section.startPanel {
 }
 
 .graphicPanel {
-    background: #f6f6f6;
-    height: 62%;
-    width: 100%;
+	background: #f7f2f2;
+	height: 62%;
+	width: 100%;
+	transition: 0.3s ease-in-out;
 }
-
+.homeIcon {
+	position: absolute;
+	top: -70px;
+	width: 60px;
+	left: 25px;
+}
 .contentPanel {
-  width: 100%;
-  padding: 0 8% 5%;
-  height: 30%;
-  box-sizing: border-box;
-  margin-top: 7%;
-  display: block;
+	width: 100%;
+	padding: 0 8% 5%;
+	height: 30%;
+	box-sizing: border-box;
+	margin-top: 7%;
+	display: block;
+	position: relative;
 }
 .contentPanel h2 {
-    height: 3rem;
-    color: var(--dark);
-    margin: 0;
-    font-size: 1.35em;
+	height: 3rem;
+	color: var(--dark);
+	margin: 0;
+	font-size: 1.35em;
+	border-bottom: 1px solid gainsboro;
 }
 .graphicPanel.rightPanel {
-    background-image: url(/img/home-non-visited@2x.png);
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-blend-mode: multiply;
+	background-image: url(/img/add_city_illustration.png);
+	background-size: 37%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-blend-mode: multiply;
 }
 .graphicPanel.leftPanel {
-    background-image: url(/img/home-visited@2x.png);
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-blend-mode: multiply;
+	background-image: url(/img/delete_illustration.png);
+	background-size: 43%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-blend-mode: multiply;
 }
 .bottom_info {
     width: 100%;
@@ -292,7 +376,7 @@ a.panel_link {
 .gridItems {
     flex-wrap: wrap;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 2% 0;
 }
 .gridItems a {
@@ -364,6 +448,36 @@ span.gridLink {
 }
 
 
+/* CITY PAGES */
+
+.cityRating {
+    display: flex;
+    align-items: center;
+}
+.cityRating img {
+    width: 25px;
+    padding-right: 10px;
+}
+.cityRating span {
+	font-weight: 500;
+	color: var(--dark);
+	padding-left: 5px;
+}
+.cityContent {
+	display: flex;
+	justify-content: space-around;
+	margin: 5% 0;
+	border: 1px solid gainsboro;
+}
+.imageCityPost {
+	width: 50%;
+	background: var(--grey-2);
+	height: 400px;
+}
+.contentCityPost {
+	max-width: 25rem;
+	padding: 5%;
+}
 
 /* FORMS */
 
@@ -371,9 +485,9 @@ span.gridLink {
 
 
 .formContainer {
-    justify-content: flex-end;
-    display: flex;
-    width: 100%;
+	justify-content: space-between;
+	display: flex;
+	width: 100%;
 }
 form.formRow {
     width: 50%;
@@ -394,13 +508,15 @@ form.formRow {
     border-bottom: 1px solid gainsboro;
 }
 .formRow select {
-    height: 42px;
-    background: #fff;
-    box-shadow: 0 1px 5px gainsboro;
-    border: 1px solid gainsboro;
-    font-size: 0.8em;
-    color: var(--green);
-    margin: 8px 0;
+	height: 42px;
+	background: #fff;
+	box-shadow: 0 1px 5px gainsboro;
+	border: 1px solid gainsboro;
+	font-size: 1em;
+	color: var(--green);
+	margin: 8px 0;
+	letter-spacing: 0.04em;
+	padding: 0 25px;
 }
 .formRow input {
     height: 30px;
@@ -408,30 +524,94 @@ form.formRow {
     box-shadow: 0 1px 5px gainsboro;
     border: 1px solid gainsboro;
 }
-input[type=text] {
-    width: 100%;
-    padding: 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    font-size: 0.8em;
-    color: var(--green);
+input[type="text"] {
+	width: 100%;
+	padding: 20px 25px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	font-size: 1em;
+	color: var(--green);
+	letter-spacing: 0.04em;
 }
 input[type="submit"] {
-    width: 200px;
-    background: var(--green);
-    border: none;
-    height: 40px;
-    border-radius: 25px;
-    color: #fff;
-    font-size: 1em;
-    font-weight: 600;
+	width: 200px;
+	background: var(--green);
+	border: none;
+	height: 40px;
+	border-radius: 25px;
+	color: #fff;
+	font-size: 1em;
+	font-weight: 600;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
 }
 input[type="radio"] {
     box-shadow: none;
 }
-.formRow.radio{
-    /* color: black; */
+.formRow.radio {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	border-bottom: 1px solid gainsboro;
+}
+.rowRadio {
     display: flex;
-    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
+}
+.rowRadio span {
+	padding: 0 20px 0 5px;
+}
+.formRow.sendPanel {
+  padding: 30px 0;
+}
+
+/* DELETE SECTION */
+
+.deleteSection {
+	border-top: 1px solid gainsboro;
+	border-bottom: 1px solid gainsboro;
+	padding: 25px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+a.deleteButton {
+	color: var(--red);
+	border: 1px solid var(--red);
+	border-radius: 20px;
+	padding: 8px 40px;
+	box-shadow: 0 1px 5px #ffc6c6;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	height: 27px;
+}
+  .alertDelete {
+  	max-width: 30rem;
+  	color: var(--red);
+  }
+  .iconDelete {
+      padding-right: 12px;
+  }
+  img.deleteIllus {
+  	width: 100%;
+  	max-width: 289px;
+  	align-self: center;
+  }
+
+
+/*  EDIT COUNTRY */
+a.backButton {
+	box-shadow: 0 2px 5px gainsboro;
+	border-radius: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 30px;
+	color: var(--green);
+	border: 1px solid var(--green);
+}
+a.backButton img {
+	padding-right: 18px;
 }

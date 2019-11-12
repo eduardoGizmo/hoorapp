@@ -1,5 +1,5 @@
 require_relative('../db/sql_runner')
-
+require('pry-byebug')
 
 class Country
 
@@ -48,6 +48,17 @@ class Country
     return result
   end
 
+  # CITIES RATE
+  def cities_rate()
+    cities = cities()
+    total_rate = 0.00
+      for city in cities
+        total_rate += city.rate
+      end
+    total = total_rate / cities.count
+    @total_rate = total.round(2)
+    update()
+  end
 
 # SHOW ALL COUNTRIES
   def self.all()
@@ -68,11 +79,46 @@ class Country
   end
 
 
+def find_all_visited_cities()
+    all_cities = cities()
+    visited_cities = []
+    for city in all_cities
+      if city.visited == 1
+        visited_cities.push(city)
+      end
+    end
+    return visited_cities
+end
+
+def count_visited_cities()
+  return find_all_visited_cities().count
+end
+
+
+# COUNT NOT VISITED CITIES
+
+  def find_all_non_visited_cities
+    all_cities = cities()
+      non_visited = []
+      for city in all_cities
+        if city.visited == 0
+          non_visited.push(city)
+        end
+      end
+      return non_visited
+  end
+
+  def count_non_visited_cities()
+      return find_all_non_visited_cities().count
+  end
+
+
 # VISITED COUNTRIES
-  def self.visited_countries
-    sql = "SELECT * FROM countries WHERE visited = 1"
-    all_countries = SqlRunner.run(sql)
-    countries = map_items(all_countries)
+  def self.visited_countries()
+    sql = "SELECT * FROM countries WHERE visited = $1"
+    values = [1]
+    all_countries = SqlRunner.run(sql, values)
+    countries = Country.map_items(all_countries)
     return countries
   end
 
@@ -81,21 +127,9 @@ class Country
     def self.non_visited_countries
       sql = "SELECT * FROM countries WHERE visited = 0"
       all_countries = SqlRunner.run(sql)
-      countries = map_items(all_countries)
+      countries = Country.map_items(all_countries)
       return countries
     end
-
-    #
-    # # FIND COUNTRY BY CITY
-    #       def visited()
-    #
-    #         country = Country.find(@country_id)
-    #         return country
-    #       end
-    #
-
-
-
 
 
 # DELETE ALL COUNTRIES

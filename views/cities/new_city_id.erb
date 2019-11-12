@@ -2,12 +2,13 @@
    <div class="top_innerHead">
       <img src="/img/icon_arrow.svg" class="arrowIcon">
       <a href="/" class="breadcrumb">HOME /</a>
-      <a href="/cities/index" class="breadcrumb">ALL CITIES </a>
+      <a href="/countries/index" class="breadcrumb">ALL COUNTRIES /</a>
+      <a href="/countries/<%= @country.id %>" class="breadcrumb"><%= @country.name.upcase %> </a>
       <span> / ADD CITY</span>
    </div>
    <div class="bottom_innerHead">
-     <h1>Add New City</h1>
-
+     <h1>Add City to <%= @country.name %></h1>
+     <a class="backButton" href="/countries/<%= @country.id %>"><img src="/img/icon_back.svg">Back to <%= @country.name %></a>
    </div>
 </section>
 
@@ -27,10 +28,10 @@
   <label for="country">Country</label>
 
     <select id="country" name="country_id">
-        <option selected="selected">Select the country</option>
-      <% @countries.each do |country| %>
-        <option value=<%= country.id %>><%= country.name %></option>
-      <% end %>
+
+
+        <option value=<%= @country.id %>><%= @country.name %></option>
+
   </select>
 
 </div>

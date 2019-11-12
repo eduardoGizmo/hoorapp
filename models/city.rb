@@ -1,5 +1,5 @@
 require_relative('../db/sql_runner')
-
+require( 'pry-byebug' )
 
 class City
 
@@ -9,7 +9,7 @@ class City
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @country_id = options['country_id']
+    @country_id = options['country_id'].to_i
     @visited = options['visited'].to_i
     @rate = options['rate'].to_i
   end
@@ -39,7 +39,7 @@ class City
 
 # FIND COUNTRY BY CITY
       def country()
-        country = Country.find(@country_id)
+        country = Country.find_by_id(@country_id)
         return country
       end
 
@@ -53,7 +53,7 @@ class City
     end
 
 # FIND CITIE BY ID
-    def self.find(id)
+    def self.find_by_id(id)
         sql = "SELECT * FROM cities WHERE id = $1"
         values = [id]
         result = SqlRunner.run(sql, values).first
@@ -68,6 +68,14 @@ class City
       cities = map_items(all_cities)
       return cities
     end
+
+# VISITED CITIES FOR A SPECIFIC COUNTRY
+
+   def just_visited()
+     all_visited_cities = Country.visited_cities
+     all_visited_cities.each {|city| City.new(city) }
+   end
+
 
 # FIND VISITED CITIES
     def self.non_visited_cities()
