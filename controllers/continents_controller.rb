@@ -6,7 +6,7 @@ also_reload('../models/*')
 
 
 get '/continents/index' do
-  @countries = Country.all()
+  @continents = Country.all_continents()
   erb ( :"continents/index" )
 end
 

@@ -140,7 +140,13 @@ end
         return countries
     end
 
-
+    # CONTINENTS THAT HAVE CITIES
+      def self.all_continents
+            sql = "SELECT DISTINCT continent FROM countries;"
+            all_continents = SqlRunner.run(sql)
+            continents = Country.map_items(all_continents)
+            return continents
+        end
 
 
 

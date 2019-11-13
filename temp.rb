@@ -1,4 +1,6 @@
 require_relative('models/city')
 require_relative('models/country')
 
-p City.cities_rate(1)
+# p City.cities_rate(1)
+
+Country.all_continents()

@@ -10,11 +10,12 @@
    </div>
 </section>
 <section class="toolSection">
-    
 
-      <a href="/countries/non_visited_countries"><div class="visitedLink"><img src="/img/icon_bar_non_visited.svg">View Non Visited</div></a>
-  <a href="/countries/visited_countries"> <div class="visitedLink"><img src="/img/icon_bar_visited.svg">View Visited</div></a>
 </section>
 <section class="uniquePanel">
-
+  <div class="gridItems">
+         <% @continents.each do |continent| %>
+              <a href="/continents/<%= continent.continent %>"><h1><%= continent.continent  %></h1</a>
+         <% end %>
+  </div>
 </section>
