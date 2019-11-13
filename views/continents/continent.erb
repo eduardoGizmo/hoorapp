@@ -2,19 +2,20 @@
    <div class="top_innerHead">
       <img src="/img/icon_arrow.svg" class="arrowIcon">
       <a href="/" class="breadcrumb">HOME </a>
-      <span> / ALL YOUR COuntries </span>
+      <span> / COUNTRIES FOR <%= @continent.upcase  %> </span>
    </div>
    <div class="bottom_innerHead">
-      <h1>All My Countries for <%= @continent  %></h1>
+      <h1>Countries <br/>for <%= @continent  %></h1>
+<a href="/continents/index" class="backButton"><img src="/img/icon_back.svg">Back to Continents</a>
 
    </div>
 </section>
-<section class="toolSection">
+<!-- <section class="toolSection">
 
 
       <a href="/countries/non_visited_countries"><div class="visitedLink"><img src="/img/icon_bar_non_visited.svg">View Non Visited</div></a>
   <a href="/countries/visited_countries"> <div class="visitedLink"><img src="/img/icon_bar_visited.svg">View Visited</div></a>
-</section>
+</section> -->
 <section class="uniquePanel">
 
   <div class="gridItems">

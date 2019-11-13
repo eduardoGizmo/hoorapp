@@ -9,13 +9,43 @@
 
    </div>
 </section>
-<section class="toolSection">
+<!-- <section class="toolSection">
 
-</section>
+</section> -->
 <section class="uniquePanel">
   <div class="gridItems">
          <% @continents.each do |continent| %>
-              <a href="/continents/<%= continent.continent %>"><h1><%= continent.continent  %></h1</a>
+              <a class="continentLink" href="/continents/<%= continent.continent %>">
+
+
+                <div class="gridItem">
+                   <div class="gridImage">
+                      <img src="" alt="">
+                   </div>
+
+
+                   <div class="gridContainer">
+                      <div class="gridText continentBox">
+                         <h3 class="gridName"><%= continent.continent %></h3>
+
+                      </div>
+
+                   </div>
+                </div>
+
+
+
+
+
+
+
+                <!-- <div class="continentBox">
+                  <div class="gridImage">
+                     <img src="" alt="">
+                  </div>
+                  <h1><%= continent.continent  %></h1>
+                </div> -->
+              </a>
          <% end %>
   </div>
 </section>
