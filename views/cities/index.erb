@@ -10,8 +10,8 @@
    </div>
 </section>
 <section class="toolSection">
-     <div class="totalCountries">Total: <span> <%= @cities.count  %> </span></div>
-   <div class="viewList"><img src="/img/icon_list.svg">View as List </div>
+     <div class="totalCountries"><img src="/img/icon_bar_all_no_border.svg" alt=""><p>Total Cities: <span> <%= @cities.count  %> </span></div>
+   <!-- <div class="viewList"><img src="/img/icon_list.svg">View as List </div> -->
   <a href="/cities/visited_cities"> <div class="visitedLink"><img src="/img/icon_bar_visited.svg">View Visited</div></a>
       <a href="/cities/non_visited_cities"><div class="visitedLink"><img src="/img/icon_bar_non_visited.svg">View Non Visited</div></a>
 
@@ -32,8 +32,8 @@
             <div class="gridContainer">
                <div class="gridText">
                   <h3 class="gridName"><%= city.name %></h3>
-                  <p class="gridContinent"><%= city.country.name %></p>
-                  <span class="gridLink">View City</span>
+                  <p class="gridContinent"><%= city.country.name.upcase %></p>
+                  <!-- <span class="gridLink">View City</span> -->
                </div>
                <div class="gridReviews">
                   <img src="/img/icon_star.svg" alt="">

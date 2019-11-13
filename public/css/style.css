@@ -49,14 +49,18 @@
     justify-content: flex-end;
 }
 .menuNav li {
-    padding: 0 0 0 7%;
-    display: unset;
+	padding: 0 0 0 3%;
+	display: unset;
 }
 
 .menuNav a {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--dark);
+	display: inline-block;
+	text-decoration: none;
+	color: var(--dark);
+	box-shadow: 0 0px 2px gainsboro;
+	padding: 8px 22px;
+	border-radius: 5px;
+	border: 1px solid var(--grey-1);
 }
 
 /* FOOTER  */

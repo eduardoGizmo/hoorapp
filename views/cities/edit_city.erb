@@ -1,12 +1,14 @@
 <section class="innerHead">
    <div class="top_innerHead">
       <img src="/img/icon_arrow.svg" class="arrowIcon">
-      <a href="/" class="breadcrumb">HOME </a>
+      <a href="/" class="breadcrumb">HOME /</a>
+      <a href="/countries/<%= @city.country_id %>" class="breadcrumb"><%= @city.country.name.upcase %> /</a>
+      <a href="/cities/<%= @city.id %>" class="breadcrumb"> <%= @city.name.upcase %> </a>
       <span> / EDIT CITY</span>
    </div>
    <div class="bottom_innerHead">
-     <h1>Edit City / <%= @city.name %></h1>
-
+     <h1><a class="linkPlace" href="/cities/<%= @city.id %>"><%= @city.name %></a> / Edit City</h1>
+<a href="/cities/<%= @city.id %>" class="backButton"><img src="/img/icon_back.svg">Back to <%= @city.name %></a>
    </div>
 </section>
 
@@ -38,7 +40,7 @@
 <div class="formRow radio">
   <label for="visited">Have you visited the city?</label>
 <div class="rowRadio">
-  <input type="radio" name="visited" value="1" checked> <span>Yes</span>
+  <input type="radio" name="visited" value="1" > <span>Yes</span>
     <input type="radio" name="visited" value="0"><span>No</span>
 </div>
 </div>
@@ -46,7 +48,7 @@
 <div class="formRow radio">
   <label for="visited">Rating:</label>
 <div class="rowRadio">
-  <input type="radio" name="rate" value="1" checked> <span>1</span><br>
+  <input type="radio" name="rate" value="1" > <span>1</span>
     <input type="radio" name="rate" value="2"><span>2</span>
       <input type="radio" name="rate" value="3"><span>3</span>
         <input type="radio" name="rate" value="4"><span>4</span>

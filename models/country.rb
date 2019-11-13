@@ -78,7 +78,7 @@ class Country
     return country
   end
 
-
+#  FIND VISITED CITIES FOR A COUNTRY
 def find_all_visited_cities()
     all_cities = cities()
     visited_cities = []
@@ -124,12 +124,24 @@ end
 
 
 # NON VISITED COUNTRIES
-    def self.non_visited_countries
+    def self.non_visited_countries()
       sql = "SELECT * FROM countries WHERE visited = 0"
       all_countries = SqlRunner.run(sql)
       countries = Country.map_items(all_countries)
       return countries
     end
+
+# SAME CONTINENT COUNTRIES
+  def self.continents(continent)
+        sql = "SELECT * FROM countries WHERE continent = $1"
+        value = [continent]
+        all_countries = SqlRunner.run(sql, value)
+        countries = Country.map_items(all_countries)
+        return countries
+    end
+
+
+
 
 
 # DELETE ALL COUNTRIES
