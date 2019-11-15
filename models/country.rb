@@ -48,6 +48,7 @@ class Country
     return result
   end
 
+
   # CITIES RATE
   def cities_rate()
     cities = cities()
@@ -94,6 +95,15 @@ def count_visited_cities()
   return find_all_visited_cities().count
 end
 
+def visited_country
+  is_visited = count_visited_cities()
+  if is_visited >= 1
+      @visited = 1
+    else
+      @visited = 0
+  end
+  update()
+end
 
 # COUNT NOT VISITED CITIES
 
@@ -140,13 +150,13 @@ end
         return countries
     end
 
-    # CONTINENTS THAT HAVE CITIES
-      def self.all_continents
-            sql = "SELECT DISTINCT continent FROM countries;"
-            all_continents = SqlRunner.run(sql)
-            continents = Country.map_items(all_continents)
-            return continents
-        end
+# CONTINENTS THAT HAVE CITIES
+  def self.all_continents
+    sql = "SELECT DISTINCT continent FROM countries;"
+    all_continents = SqlRunner.run(sql)
+    continents = Country.map_items(all_continents)
+    return continents
+  end
 
 
 

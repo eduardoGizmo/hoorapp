@@ -15,7 +15,15 @@
      <div class="totalCountries"><img src="/img/icon_no_visited.svg"> Non visited:<span> <%= @total_non_visited  %> </span></div>
   </div>
 
-      <div class="totalRate"><img src="/img/icon_star.svg" alt="">Total Rating:<span> <%= @country.total_rate %> </span></div>
+      <div class="totalRate"><img src="/img/icon_star.svg" alt="">Total Rating:
+        <span>
+          <% if @country.total_rate > 0.0  %>
+          <%= @country.total_rate  %>
+          <% else %>
+          0.0
+          <% end %>
+        </span>
+      </div>
    <!-- <div class="viewList"><img src="/img/icon_list.svg">View as List </div> -->
     <a href="/new_city/<%= @country.id  %>" class="addButton"><img src="/img/icon_folder.svg">Add new City</a>
  <!-- <a href="/countries/visited_countries"> <div class="visitedLink"><img src="/img/icon_bar_visited.svg">View Visited</div></a> -->
@@ -30,7 +38,7 @@
    <a href="/cities/<%= city.id %>">
       <div class="gridItem">
          <div class="gridImage">
-            <img src="" alt="">
+            <img src="/img/cities/<%= city.name[0..3] %>.jpg" alt="">
          </div>
          <% if city.visited == 1 %>
          <img src="/img/icon_visited.svg" alt="Icon for non visited place" class="iconGrid">

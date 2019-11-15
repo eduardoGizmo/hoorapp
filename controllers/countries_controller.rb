@@ -18,8 +18,9 @@ get '/new_country' do
 end
 
 post '/countries/new_country' do
-  Country.new(params).save
-  redirect to '/countries/index'
+  country = Country.new(params)
+  country.save
+  redirect to "/countries/#{country.id}"
 end
 
 get '/countries/visited_countries' do

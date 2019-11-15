@@ -40,23 +40,23 @@
 <div class="formRow radio">
   <label for="visited">Have you visited the city?</label>
 <div class="rowRadio">
-  <input type="radio" name="visited" value="1" > <span>Yes</span>
-    <input type="radio" name="visited" value="0"><span>No</span>
+    <input type="radio" name="visited" value="1" <% if @city.visited == 1 %> checked <%end%> > <span>Yes</span>
+    <input type="radio" name="visited" value="0" <% if @city.visited == 0 %> checked <%end%> > <span>No</span>
 </div>
 </div>
 
 <div class="formRow radio">
   <label for="visited">Rating:</label>
 <div class="rowRadio">
-  <input type="radio" name="rate" value="1" > <span>1</span>
-    <input type="radio" name="rate" value="2"><span>2</span>
-      <input type="radio" name="rate" value="3"><span>3</span>
-        <input type="radio" name="rate" value="4"><span>4</span>
-          <input type="radio" name="rate" value="5"><span>5</span>
+  <input type="radio" name="rate" value="1" <% if @city.rate == 1 %>checked<% end %>><span>1</span>
+  <input type="radio" name="rate" value="2" <% if @city.rate == 2 %>checked<% end %>><span>2</span>
+  <input type="radio" name="rate" value="3" <% if @city.rate == 3 %>checked<% end %>><span>3</span>
+  <input type="radio" name="rate" value="4" <% if @city.rate == 4 %>checked<% end %>><span>4</span>
+  <input type="radio" name="rate" value="5" <% if @city.rate == 5 %>checked<% end %>><span>5</span>
 </div>
 </div>
   <div class="formRow sendPanel">
-      <input type="submit" value="Edit City"/>
+      <input type="submit" value="Save City"/>
     </div>
 
 

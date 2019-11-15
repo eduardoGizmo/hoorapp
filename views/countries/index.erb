@@ -11,9 +11,11 @@
 </section>
 <section class="toolSection">
       <div class="totalCountries"><img src="/img/icon_bar_all_no_border.svg" alt=""><p>Total Countries:</p><span> <%= @countries.count  %> </span></div>
-   <!-- <div class="viewList"><img src="/img/icon_list.svg">View as List </div> -->
-
-      <a href="/countries/non_visited_countries"><div class="visitedLink"><img src="/img/icon_bar_non_visited.svg">View Non Visited</div></a>
+      <a href="/countries/non_visited_countries">
+        <div class="visitedLink">
+          <img src="/img/icon_bar_non_visited.svg">View Non Visited
+        </div>
+      </a>
   <a href="/countries/visited_countries"> <div class="visitedLink"><img src="/img/icon_bar_visited.svg">View Visited</div></a>
 </section>
 <section class="uniquePanel">
@@ -22,7 +24,7 @@
       <a href="/countries/<%= country.id %>">
          <div class="gridItem">
             <div class="gridImage">
-               <img src="" alt="">
+               <img src="/img/countries/<%= country.name[0..3] %>.jpg" alt="">
             </div>
             <% if country.visited == 1 %>
             <img src="/img/icon_visited.svg" alt="Icon for non visited place" class="iconGrid">

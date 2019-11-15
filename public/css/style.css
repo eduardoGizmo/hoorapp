@@ -217,8 +217,8 @@ a.editButton img {
 	font-weight: 500;
 	color: var(--dark);
 	padding: 9px 26px;
-	box-shadow: 0 1px 7px gainsboro;
-	border-radius: 5px;
+	box-shadow: 0 1px 1px gainsboro;
+	border-radius: 35px;
 	border: 1px solid #ebebeb;
 	margin: 0 20px;
 }
@@ -405,12 +405,19 @@ a.panel_link {
 }
 .gridImage {
     background: #dfe4e8;
-    height: 146px;
+    height: 150px;
 }
 .gridText {
     padding: 0 8%;
     width: 60%;
     display: block;
+}
+.gridImage img {
+	object-fit: cover;
+	width: 101%;
+	height: 150px;
+	margin-left: -1px;
+	margin-top: -1px;
 }
 .gridText h3 {
     color: var(--dark);
@@ -452,29 +459,11 @@ span.gridLink {
 }
 
 /* CONTINENTS */
-/* .continentBox {
-    box-shadow: 0 2px 5px gainsboro;
-    border-radius: 25px;
-    padding: 0 30px;
-    margin: 2%;
-    transition: 0.3s ease-in-out;
-}
-.continentBox:hover {
-	background: var(--green);
-	transform: translateY(-3px);
-	color: #fff;
-}
-.continentBox h1{
-transition: 0.3s ease-in-out;
-}
-.continentBox:hover h1{
-color: #fff;
 
-} */
 .continentBox h3 {
-	font-size: 1.5em;
+	font-size: 1.2em;
 	padding: 0;
-	margin-top: 16px;
+	margin-top: 25px;
 }
 /* CITY PAGES */
 
@@ -500,11 +489,17 @@ color: #fff;
 .imageCityPost {
 	width: 50%;
 	background: var(--grey-2);
-	height: 400px;
+	height: 350px;
+	overflow: hidden;
 }
 .contentCityPost {
 	max-width: 25rem;
 	padding: 5%;
+}
+.imageCityPost img{
+object-fit: cover;
+width: 100%;
+height: 350px;
 }
 
 /* FORMS */

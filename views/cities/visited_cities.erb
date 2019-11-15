@@ -23,7 +23,7 @@
       <a href="/cities/<%= city.id %>">
          <div class="gridItem">
             <div class="gridImage">
-               <img src="" alt="">
+               <img src="/img/cities/<%= city.name[0..3] %>.jpg" alt="">
             </div>
             <% if city.visited == 1 %>
             <img src="/img/icon_visited.svg" alt="Icon for non visited place" class="iconGrid">

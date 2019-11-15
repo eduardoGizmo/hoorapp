@@ -17,12 +17,10 @@
          <% @continents.each do |continent| %>
               <a class="continentLink" href="/continents/<%= continent.continent %>">
 
-
                 <div class="gridItem">
                    <div class="gridImage">
-                      <img src="" alt="">
+                    <img src="/img/continents/<%= continent.continent[0..2] %>.jpg" alt="">
                    </div>
-
 
                    <div class="gridContainer">
                       <div class="gridText continentBox">
@@ -33,18 +31,6 @@
                    </div>
                 </div>
 
-
-
-
-
-
-
-                <!-- <div class="continentBox">
-                  <div class="gridImage">
-                     <img src="" alt="">
-                  </div>
-                  <h1><%= continent.continent  %></h1>
-                </div> -->
               </a>
          <% end %>
   </div>

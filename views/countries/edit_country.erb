@@ -13,9 +13,6 @@
 <section class="uniquePanel">
    <div class="gridItems">
 
-
-
-
 <div class="formContainer">
 <img src="/img/delete_illustration.png" alt="" class="deleteIllus">
 
@@ -29,29 +26,29 @@
 <div class="formRow border">
   <label for="continent">Continent</label>
   <select name="continent">
-    <option value="Africa">Africa</option>
-    <option value="Asia">Asia</option>
-    <option value="Australia-Pacific">Australia - Pacific</option>
-    <option value="Caribe">Caribe</option>
-    <option value="Europe">Europe</option>
-    <option value="North America">North America</option>
-    <option value="Middle East">Middle East</option>
-    <option value="South America">South America</option>
+    <option value="Africa"
+    <% if @country.continent == "Africa" %>selected="selected"<% end %>>Africa</option>
+    <option value="Asia"
+    <% if @country.continent == "Asia" %>selected="selected"<% end %>>Asia</option>
+    <option value="Australia-Pacific"
+    <% if @country.continent == "Australia-Pacific" %>selected="selected"<% end %>>Australia - Pacific</option>
+    <option value="Caribe"
+    <% if @country.continent == "Caribe" %>selected="selected"<% end %>>Caribe</option>
+    <option value="Europe"
+    <% if @country.continent == "Europe" %>selected="selected"<% end %>>Europe</option>
+    <option value="North America"
+    <% if @country.continent == "North America" %>selected="selected"<% end %>>North America</option>
+    <option value="Middle East"
+    <% if @country.continent == "Middle East" %>selected="selected"<% end %>>Middle East</option>
+    <option value="South America"
+    <% if @country.continent == "South America" %>selected="selected"<% end %>>South America</option>
   </select>
 </div>
 
-<div class="formRow radio">
-  <label for="visited">Visited?</label>
-<div class="rowRadio">
-  <input type="radio" name="visited" value="1" checked> <span>Yes</span><br>
-    <input type="radio" name="visited" value="0"><span>No</span></div>
-</div>
 
   <div class="formRow sendPanel">
       <input type="submit" value="Save Changes"/>
     </div>
-
-
 </form>
 </div>
    </div>

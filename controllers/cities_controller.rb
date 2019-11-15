@@ -24,7 +24,7 @@ post '/cities/new_city' do
   city.save
   country = Country.find_by_id(city.country_id)
   country.cities_rate()
-  # country.update
+  country.visited_country()
   redirect to "/cities/#{city.id}"
 end
 
@@ -35,9 +35,6 @@ get '/new_city/:id' do
   @country = Country.find_by_id(params[:id])
   erb ( :"cities/new_city_id" )
 end
-
-
-
 
 
 get '/cities/visited_cities' do
@@ -51,16 +48,15 @@ get '/cities/non_visited_cities' do
 end
 
 #  DELETE CITY
-
 get '/cities/:id/delete' do
   city = City.find_by_id(params[:id])
-  city.delete
+  country = Country.find_by_id(city.country_id)
+  city.delete()
+  country.visited_country()
   redirect to "/countries/#{city.country_id}"
 end
 
-
 get '/cities/:id' do
-
   @city = City.find_by_id(params[:id].to_i)
   @country = @city.country
   erb ( :"cities/city" )
@@ -75,6 +71,8 @@ end
 
 post '/cities/:id' do
   city = City.new(params)
+  country = Country.find_by_id(city.country_id)
   city.update
+  country.visited_country()
   redirect to "/cities/#{params['id']}"
 end
